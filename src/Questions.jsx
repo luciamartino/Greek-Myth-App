@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 export function Questions({question, answer1, answer2, answer3, answer4}){
 
     // const [ score, setScore ] = useState(0)
@@ -18,12 +16,12 @@ export function Questions({question, answer1, answer2, answer3, answer4}){
             <div className="answers">
                 <label >{answer1}</label>
                 <input type="radio" name="question1"/>
-                <label>{answer2}</label> 
-                <input type="radio" name="question1"/> 
-                <label>{answer3}</label> 
+                <label>{answer2}</label>
+                <input type="radio" name="question1"/>
+                <label>{answer3}</label>
                 <input type="radio" name="question1"/>
 
-                {answer4 && 
+                {answer4 &&
                 <>
                 <label>{answer4}</label>
                 <input type="radio" name="question1"/>

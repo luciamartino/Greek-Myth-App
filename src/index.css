@@ -10,24 +10,28 @@
 }
 
 body{
-    width: 800px;
-    height: 700px;
-    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: var(--background-yellow);
     font-family: 'Courier New', Courier, monospace;
+}
+
+.fixed-nav{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
 }
 
 .box{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: var(--background-yellow);
     border: 2px solid var(--darker-darker-red);
-    padding: 15px;
+
 }
 
 .prevnext {
@@ -55,8 +59,15 @@ body{
     background-color: #370002;
 }
 
+.answers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .answers button{
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -78,7 +89,7 @@ body{
     white-space: normal;  /* allow wrapping */
     word-wrap: break-word; /* break long words */
     overflow-wrap: break-word;
-    max-width: 650px;
+    padding: 10px;
     color: var(--darker-darker-red);
 }
 
@@ -93,6 +104,7 @@ button{
     padding: 15px;
     cursor: pointer;
     border: 2px solid var(--darker-darker-red);
+    background-color: var(--red);
 }
 
 .correct-answer{
@@ -105,4 +117,15 @@ button{
     color: var(--text-brown-);
     opacity: 30%;
     cursor: not-allowed;
+}
+
+.refresh{
+    margin-top: 30px;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

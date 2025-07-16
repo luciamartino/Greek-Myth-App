@@ -8,7 +8,7 @@ export function Quiz(){
     const [answered, setAnswered] = useState(false)
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [showScore, setShowScore] = useState(false)
-    
+
     function handleAnswerOption(index, value){
         if(answered) return;
         setAnswered(true)
@@ -17,8 +17,8 @@ export function Quiz(){
             setScore(prev => prev + 1)
         }
     }
-    
-    
+
+
     function onNextQuestion(){
         setAnswered(false)
         setSelectedAnswer(null) //to go back to the previous state of the quiz, when nothing were selected
@@ -28,7 +28,7 @@ export function Quiz(){
             setShowScore(true) //showed at the end of the quiz
         }
     }
-    
+
     function handleRefresh(){
         setScore(0)
         setCurrentQuestion(0)
@@ -42,13 +42,17 @@ export function Quiz(){
     // }
 
     return(
-        <div className="box">
-        {showScore ? 
         <div>
-             your score is {score} of {questions.length}
-             <button className="refresh" onClick={handleRefresh}>Restart the game, but you know you still suck</button>
+            <div className="fixed-nav">
+                <p>Greek Mythology Test</p>
+                <p>(are you a demigod or just a nerd?)</p>
+            </div>
+        {showScore ?
+        <div className="score">
+             your score is {score} out of {questions.length}
+             <button className="refresh" onClick={handleRefresh}>Restart the game, but you know you'd still suck</button>
         </div> :
-        <>
+        <div className="box">
             <h2 className="question">{questions[currentQuestion].question}</h2>
             <div className="answers-button-box">
                 <div className="answers">
@@ -66,9 +70,9 @@ export function Quiz(){
                 </div>
                 <p>Question {currentQuestion + 1} of {questions.length}</p>
             </div>
-        </>
+        </div>
         }
-        
+
         </div>
     )
 }
